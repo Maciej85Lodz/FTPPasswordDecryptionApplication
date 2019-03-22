@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FTPPasswordDecryptionApplication.Properties
+namespace FTPPasswordCryptographyApp.Properties
 {
 
 

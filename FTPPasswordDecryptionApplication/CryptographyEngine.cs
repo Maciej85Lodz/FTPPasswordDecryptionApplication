@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace FTPPasswordDecryptionApplication
+namespace FTPPasswordCryptographyApp
 {
     public class CryptographyEngine
     {
