@@ -7,12 +7,10 @@ namespace FTPPasswordDecryptionApplication
     public class DecryptEngine
     {
         private static readonly byte[] CryptoKey = Encoding.ASCII.GetBytes("FtPa$$w0rD");
-        private static readonly byte[] CryptoStandardIv = Encoding.ASCII.GetBytes("C0nn3ci0n");
-        private static readonly byte[] MobileCryptoStandardIv = Encoding.ASCII.GetBytes("C0nn3ci0n");
         private static readonly byte[] CryptoPasswordIv = Encoding.ASCII.GetBytes("Pa55w0rD");
-        public const string SecureConnectionProviderName = "SecureConnection";
 
-        static private string EncryptString(string value, byte[] encryotionIv)
+
+        private static string EncryptString(string value, byte[] encryotionIv)
         {
             byte[] inBytes = Encoding.Unicode.GetBytes(value);
             RC2CryptoServiceProvider csp = new RC2CryptoServiceProvider();
@@ -22,7 +20,7 @@ namespace FTPPasswordDecryptionApplication
             return Convert.ToBase64String(outByte);
         }
 
-        static private string DecryptString(string value, byte[] encryotionIv)
+        private static string DecryptString(string value, byte[] encryotionIv)
         {
             byte[] inBytes = Convert.FromBase64String(value);
             RC2CryptoServiceProvider csp = new RC2CryptoServiceProvider();
