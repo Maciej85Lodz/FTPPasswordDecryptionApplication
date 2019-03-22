@@ -27,38 +27,35 @@ namespace FTPPasswordDecryptionApplication
 
         private void TextBox1_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
         }
 
         private void TextBox2_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
         }
 
         private void TextBox3_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
         }
 
         private void Decrypt_Click(object sender, RoutedEventArgs e)
         {
-            if (TextBox2.SelectedText != null)
+            if (string.IsNullOrEmpty(TextBox2.Text))
             {
-                TextBox3.Text = DecryptEngine.DecryptFtpPassword(TextBox2.Text);
+                MessageBox.Show("This field cannot be empty!");
             }
             else
-                MessageBox.Show("This field cannot be empty!");
+                TextBox3.Text = CryptographyEngine.DecryptionFtpPassword(TextBox2.Text);
         }
     
 
         private void Encrypt_Click(object sender, RoutedEventArgs e)
         {
-            if ()
+            if (string.IsNullOrEmpty(TextBox1.Text))
             {
-                TextBox2.Text = DecryptEngine.EncryptFtpPassword(TextBox1.Text);
+                MessageBox.Show("This field cannot be empty!");
             }
             else
-                MessageBox.Show("This field cannot be empty!");
+                TextBox2.Text = CryptographyEngine.EncryptionFtpPassword(TextBox1.Text);
         }
     }
 }
