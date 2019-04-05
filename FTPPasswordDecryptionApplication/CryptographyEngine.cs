@@ -6,8 +6,8 @@ namespace FTPPasswordCryptographyApp
 {
     public class CryptographyEngine
     {
-        private static readonly byte[] CryptographyKey = Encoding.ASCII.GetBytes("FtPa$$w0rD");
-        private static readonly byte[] CryptographyPasswordLevel = Encoding.ASCII.GetBytes("Pa55w0rD");
+        private static readonly byte[] CryptographyKey = Encoding.ASCII.GetBytes("FtPpa$$w0rD");
+        private static readonly byte[] CryptographyPasswordLevel = Encoding.ASCII.GetBytes("Pa$$w0rD");
 
 
         private static string EncryptionString(string value, byte[] encryotionLevel)
