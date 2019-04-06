@@ -29,7 +29,7 @@ namespace FTPPasswordCryptographyApp
         {
             if (string.IsNullOrEmpty(TextBox2.Text))
             {
-                TextBox3.Text = "This field cannot be empty!";
+                TextBox2.Text = "This field cannot be empty!";
             }
             else
                 TextBox3.Text = CryptographyEngine.DecryptionFtpPassword(TextBox2.Text);
